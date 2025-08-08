@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".ItemDetailActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_bar_item_detail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:id="@+id/back_arrow_item_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back"
+                android:padding="8dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="Back button" />
+
+            <TextView
+                android:id="@+id/item_detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add new item"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                app:layout_constraintStart_toEndOf="@id/back_arrow_item_detail"
+                app:layout_constraintTop_toTopOf="@id/back_arrow_item_detail"
+                app:layout_constraintBottom_toBottomOf="@id/back_arrow_item_detail"
+                android:layout_marginStart="8dp"/>
+
+            <TextView
+                android:id="@+id/edit_item_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EDIT"
+                android:textColor="#FB6D3A"
+                android:textStyle="bold"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/back_arrow_item_detail"
+                app:layout_constraintBottom_toBottomOf="@id/back_arrow_item_detail" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/image_card_view"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_detail_title">
+
+                <ImageView
+                    android:id="@+id/item_detail_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_placeholder"
+                    android:background="#EEEEEE"
+                    android:contentDescription="Item image" />
+
+                <LinearLayout
+                    android:id="@+id/image_dots_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="8dp">
+                    <!-- Placeholder dots -->
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/dot_indicator_active" />
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/dot_indicator_inactive" />
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/dot_indicator_inactive" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/item_detail_name_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Chicken Thai Biriyani"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:background="@android:color/transparent"
+                android:padding="0dp"
+                android:lines="1"
+                android:singleLine="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_card_view" />
+
+            <EditText
+                android:id="@+id/item_detail_location_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_location_on"
+                android:drawablePadding="4dp"
+                android:text="Kentucky 39495"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:background="@android:color/transparent"
+                android:padding="0dp"
+                android:layout_marginTop="4dp"
+                android:lines="1"
+                android:singleLine="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_detail_name_input" />
+
+            <TextView
+                android:id="@+id/price_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_detail_location_input" />
+
+            <EditText
+                android:id="@+id/item_detail_price_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$60"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#747783"
+                android:background="@android:color/transparent"
+                android:inputType="numberDecimal"
+                android:lines="1"
+                android:singleLine="true"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_label" />
+
+            <TextView
+                android:id="@+id/description_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_detail_price_input" />
+
+            <EditText
+                android:id="@+id/item_detail_description_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Bibendum in vel, mattis et amet dui mauris turpis."
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:background="@android:color/transparent"
+                android:gravity="top|start"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_label" />
+
+            <Button
+                android:id="@+id/update_item_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#FF5722"
+                android:layout_marginTop="32dp"
+                android:paddingVertical="16dp"
+                app:cornerRadius="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_detail_description_input"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_bar_item_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

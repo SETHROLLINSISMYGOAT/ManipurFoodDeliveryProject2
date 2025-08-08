@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+    tools:context=".OtpVerifyActivity">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@drawable/header_background"
+            android:layout_marginBottom="16dp" />
+
+
+        <TextView
+            android:id="@+id/send_otp_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Send OTP"
+            android:textColor="#000000"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/enter_otp_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Enter the OTP"
+            android:textColor="#595959"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/otp_input_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/otp_input_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/otp_input_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/otp_input_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold">
+
+            </EditText>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:padding="16dp"
+            android:text="Sign in"
+            android:backgroundTint="#333333"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold">
+
+        </Button>
+
+
+        <TextView
+            android:id="@+id/already_have_account_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:text="Already have an account? Sign in"
+            android:textColor="#595959"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/reviewer_profile_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_background"
+            android:src="@drawable/ic_person"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="Reviewer profile image" />
+
+        <TextView
+            android:id="@+id/review_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20/12/2020"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/reviewer_profile_image" />
+
+        <TextView
+            android:id="@+id/review_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:text="Great Food and Service"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            app:layout_constraintStart_toEndOf="@id/reviewer_profile_image"
+            app:layout_constraintEnd_toStartOf="@id/review_options_icon"
+            app:layout_constraintTop_toTopOf="@id/reviewer_profile_image" />
+
+        <LinearLayout
+            android:id="@+id/star_rating_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@id/reviewer_profile_image"
+            app:layout_constraintTop_toBottomOf="@id/review_title">
+            <!-- Example: 5 star images. You can use a RatingBar if more interactive -->
+            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_star" app:tint="#FFC107" />
+            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_star" app:tint="#FFC107" />
+            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_star" app:tint="#FFC107" />
+            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_star" app:tint="#FFC107" />
+            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_star_half" app:tint="#FFC107" /> <!-- Example half star -->
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/review_options_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_more_vert"
+            app:tint="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/review_title"
+            android:contentDescription="More options" />
+
+        <TextView
+            android:id="@+id/review_body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="This Food so tasty &amp; delicious. Breakfast so fast Delivered in my place. Chef is very Friendly. I'm really like chef for Home Food Order. Thanks."
+            android:textSize="14sp"
+            android:textColor="#666666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/star_rating_container" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
