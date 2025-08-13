@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/incoming_order_route"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pizza Palace → Oak Ave"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/incoming_order_amount"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/incoming_order_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$12.50"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/location_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_location_pin"
+            app:tint="#666666"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/incoming_order_route"
+            android:contentDescription="Location icon" />
+
+        <TextView
+            android:id="@+id/incoming_order_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="1.2 km"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            app:layout_constraintStart_toEndOf="@id/location_icon"
+            app:layout_constraintTop_toTopOf="@id/location_icon"
+            app:layout_constraintBottom_toBottomOf="@id/location_icon" />
+
+        <TextView
+            android:id="@+id/accept_order_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accept order"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/incoming_order_distance" />
+
+        <Button
+            android:id="@+id/btn_accept_order_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4CAF50"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="10dp"
+            android:layout_marginStart="16dp"
+            app:cornerRadius="8dp"
+            app:layout_constraintStart_toEndOf="@id/accept_order_label"
+            app:layout_constraintTop_toTopOf="@id/accept_order_label"
+            app:layout_constraintBottom_toBottomOf="@id/accept_order_label"/>
+
+        <Button
+            android:id="@+id/btn_accept_order_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#F44336"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="10dp"
+            android:layout_marginStart="8dp"
+            app:cornerRadius="8dp"
+            app:layout_constraintStart_toEndOf="@id/btn_accept_order_yes"
+            app:layout_constraintTop_toTopOf="@id/btn_accept_order_yes"
+            app:layout_constraintBottom_toBottomOf="@id/btn_accept_order_yes"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

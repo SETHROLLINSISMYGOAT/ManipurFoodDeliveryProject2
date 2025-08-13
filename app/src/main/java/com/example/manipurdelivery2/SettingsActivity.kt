@@ -112,6 +112,7 @@ class SettingsActivity : AppCompatActivity() {
                     val intent = Intent(this, WithdrawalActivity::class.java)
                     startActivity(intent)
                 }
+
                 else -> {
                     Toast.makeText(this, "${item.title} clicked!", Toast.LENGTH_SHORT).show()
 

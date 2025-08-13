@@ -67,7 +67,9 @@
             android:text="History" />
     </com.google.android.material.tabs.TabLayout>
 
+
     <ScrollView
+        android:id="@+id/request_withdrawal_scroll_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/withdrawal_tab_layout"
@@ -78,7 +80,8 @@
         android:paddingEnd="16dp"
         android:paddingTop="24dp"
         android:paddingBottom="16dp"
-        android:clipToPadding="false">
+        android:clipToPadding="false"
+        android:visibility="visible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -165,27 +168,88 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_bar_withdrawal"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/history_content_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="8dp"
+        android:paddingHorizontal="16dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/withdrawal_tab_layout"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_bar_withdrawal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    <LinearLayout
+        android:id="@+id/history_search_filter_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:menu="@menu/bottom_nav_menu"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/history_search_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search"
+            android:padding="8dp"
+            android:background="@drawable/rounded_edittext_light_bg"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="8dp"
+            android:singleLine="true" />
+
+        <Spinner
+            android:id="@+id/history_status_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:padding="8dp"
+            android:background="@drawable/rounded_edittext_light_bg"
+            android:entries="@array/withdrawal_status_options" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/withdrawal_history_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/history_search_filter_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add_withdrawal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_add_white"
-        app:backgroundTint="@color/fab_color"
-        app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_bar_withdrawal"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="Add new item" />
+        tools:listitem="@layout/item_withdrawal_history" />
 
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<com.google.android.material.bottomnavigation.BottomNavigationView
+android:id="@+id/bottom_navigation_bar_withdrawal"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:background="@android:color/white"
+app:menu="@menu/bottom_nav_menu"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintEnd_toEndOf="parent" />
+
+
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+android:id="@+id/fab_add_withdrawal"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/ic_add_white"
+app:backgroundTint="@color/fab_color"
+app:fabSize="normal"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintBottom_toTopOf="@id/bottom_navigation_bar_withdrawal"
+android:layout_marginBottom="16dp"
+android:contentDescription="Add new item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

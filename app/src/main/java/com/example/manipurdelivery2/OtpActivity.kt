@@ -34,7 +34,7 @@ class OtpActivity : AppCompatActivity() {
 
             if (enteredOtp == expectedOtp) {
                 Toast.makeText(this, "SignIn Successful!", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, OrderDetailsActivity::class.java))
                 finish()
             } else {
                 Toast.makeText(this, "Invalid OTP", Toast.LENGTH_SHORT).show()

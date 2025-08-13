@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/history_restaurant_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pizza Palace"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/history_status_tag"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_weight="1" />
+
+        <TextView
+            android:id="@+id/history_status_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Completed"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="3dp"
+            android:background="@drawable/tag_completed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/history_restaurant_name" />
+
+        <TextView
+            android:id="@+id/history_owner_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Owner: John Smith"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/history_restaurant_name"
+            app:layout_constraintEnd_toStartOf="@id/history_amount"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <TextView
+            android:id="@+id/history_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$500.00"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/history_status_tag"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/history_order_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Order ID: TXN001"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/history_owner_name"
+            app:layout_constraintEnd_toStartOf="@id/history_datetime"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <TextView
+            android:id="@+id/history_datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2025-07-24 at 14:30"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/history_amount"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/history_note"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Note: Monthly withdrawal"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/history_by_admin"
+            app:layout_constraintTop_toBottomOf="@id/history_order_id"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <TextView
+            android:id="@+id/history_by_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By: Admin"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/history_datetime"
+            android:layout_marginTop="4dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

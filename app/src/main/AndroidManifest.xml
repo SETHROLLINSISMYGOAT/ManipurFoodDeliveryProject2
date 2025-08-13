@@ -47,8 +47,13 @@
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".UserReviewActivity" />
         <activity android:name=".WithdrawalActivity" />
+        <activity android:name=".OrderDetailsActivity" />
+        <activity android:name=".EarningsDashboardActivity" />
+        <activity android:name=".WithdrawalRequestActivity"/>
+        <activity android:name=".UserProfileActivity"/>
 
-
+        <activity android:name="OrderYetActivity"/>
+        <activity android:name=".ItemIncoming"/>
 
     </application>
 

@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">ManipurDelivery2</string>
     <string name="breakfast">Breakfast</string>
+    <string-array name="withdrawal_status_options">
+        <item>All status</item>
+        <item>Completed</item>
+        <item>Pending</item>
+        <item>Failed</item>
+    </string-array>
 </resources>
